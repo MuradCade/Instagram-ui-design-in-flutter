@@ -1,20 +1,32 @@
 import "package:flutter/material.dart";
 import "stories.dart";
+import 'userpost.dart';
 
 class home extends StatelessWidget {
-  const home({super.key});
-
+  // people names for posts
+    final List names = [
+      "MuradCade",
+      "Eelo",
+      "Apple",
+      "Cristiano Ronaldo",
+      "The Rock",
+    ];
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+      backgroundColor: Colors.transparent,
+      
+
+            elevation:0,
             title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text("Instagram"),
+            Text("Instagram", style:TextStyle(color:Colors.black)),
             Row(
               children: [
-                Icon(Icons.message),
+                Icon(Icons.share,   color: Colors.black,),
               ],
             )
           ],
@@ -27,18 +39,23 @@ class home extends StatelessWidget {
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: [
-                  stories(),
-                  stories(),
-                  stories(),
-                  stories(),
-                  stories(),
-                  stories(),
+                  stories(text: "Murad"),
+                  stories(text: "Messi"),
+                  stories(text: "Ronaldo"),
+                  stories(text: "Eelo"),
+                  stories(text: "Apple"),
+                  stories(text: "Microsoft"),
                 ],
               ),
-            )
-            //     child: Row(
-            //         // children: [],
-            //         ))
+            ),
+        // Posts
+    Expanded(
+      child:  ListView.builder(
+        itemCount:names.length,
+        itemBuilder: (context,index){
+      return userpost(people:names[index]);
+      }), 
+    )
           ],
         ));
   }

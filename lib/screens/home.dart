@@ -24,7 +24,7 @@ class _homepageState extends State<homepage> {
     home(),
     search(),
     add(),
-    account(),
+    reehels(),
   ];
 
   @override
@@ -44,7 +44,7 @@ class _homepageState extends State<homepage> {
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
           BottomNavigationBarItem(icon: Icon(Icons.search), label: "Search"),
           BottomNavigationBarItem(icon: Icon(Icons.add), label: "Post"),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: "Account"),
+          BottomNavigationBarItem(icon: Icon(Icons.camera_alt), label: "Reels"),
         ],
       ),
     );

@@ -1,19 +1,23 @@
 import "package:flutter/material.dart";
 
 class stories extends StatelessWidget {
-  const stories({super.key});
+// variable text hold the name will be given as parameter to the stories
+
+  final String text;
+  stories({required this.text});
+
 
 //  String text;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-        padding: EdgeInsets.all(8.0),
+        padding: EdgeInsets.all(10.0),
         child: Column(
           children: [
             Container(
               width: 80,
-              height: 60,
+              height: 70,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 color: Colors.grey[400],
@@ -22,7 +26,7 @@ class stories extends StatelessWidget {
             SizedBox(
               height: 10,
             ),
-            Text('MuradCade'),
+            Text(text, style: TextStyle(fontWeight: FontWeight.bold),),
           ],
         ));
   }
